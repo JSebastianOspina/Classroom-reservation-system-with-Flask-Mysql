@@ -1,0 +1,171 @@
+<head>
+
+
+
+
+   <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <link href="/static/css/main2.css" rel="stylesheet" />
+</head>
+
+
+
+{% if codigo == 0 %}
+<h1 style="color:red"> ERROR! USUARIO Y/O CONTRASEÑA INCORRECTOS </h1>
+
+<form id="contact-form" method="POST" action="/login" style="margin-top: 6%">
+  <p>¡Bienvenido!</p>
+  <p>Ingresa tu correo y contraseña para conocer tu código secreto</p>
+
+  <p>Mi
+    <label for="email">correo electronico</label> es:</p>
+
+    <input type="email" name="email" id="email" placeholder="(Ingresa tu correo aca)" required>
+
+  <p> Mi
+    <label for="your-message">contraseña</label> es:</p>
+
+  <p>
+    <input type ="password" name="pass" id="pass" placeholder="(Ingresa tu contraseña)" class="expanding" required></textarea>
+  </p>
+  <p>
+    <button type="submit">
+      <svg version="1.1" class="send-icn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="36px" viewBox="0 0 100 36" enable-background="new 0 0 100 36" xml:space="preserve">
+        <path d="M100,0L100,0 M23.8,7.1L100,0L40.9,36l-4.7-7.5L22,34.8l-4-11L0,30.5L16.4,8.7l5.4,15L23,7L23.8,7.1z M16.8,20.4l-1.5-4.3
+  l-5.1,6.7L16.8,20.4z M34.4,25.4l-8.1-13.1L25,29.6L34.4,25.4z M35.2,13.2l8.1,13.1L70,9.9L35.2,13.2z" />
+      </svg>
+      <small>Iniciar sesion</small>
+    </button>
+  </p>
+</form>
+
+<small class='website'>Copyrigth Sebastian Ospina, Bryan Castro, para <a href='https://www.unibague.edu.co/' target='_blank'>Universidad de Ibague</a> </small>
+
+{% elif codigo == 2%}
+
+<form id="contact-form" method="POST" action="/login" style="margin-top: 6%">
+  <p>¡Bienvenido!</p>
+  <p>Ingresa tu correo y contraseña para conocer tu código secreto</p>
+
+  <p>Mi
+    <label for="email">correo electronico</label> es:</p>
+
+    <input type="email" name="email" id="email" placeholder="(Ingresa tu correo aca)" required>
+
+  <p> Mi
+    <label for="your-message">contraseña</label> es:</p>
+
+  <p>
+    <input type ="password" name="pass" id="pass" placeholder="(Ingresa tu contraseña)" class="expanding" required></textarea>
+  </p>
+  <p>
+    <button type="submit">
+      <svg version="1.1" class="send-icn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="36px" viewBox="0 0 100 36" enable-background="new 0 0 100 36" xml:space="preserve">
+        <path d="M100,0L100,0 M23.8,7.1L100,0L40.9,36l-4.7-7.5L22,34.8l-4-11L0,30.5L16.4,8.7l5.4,15L23,7L23.8,7.1z M16.8,20.4l-1.5-4.3
+  l-5.1,6.7L16.8,20.4z M34.4,25.4l-8.1-13.1L25,29.6L34.4,25.4z M35.2,13.2l8.1,13.1L70,9.9L35.2,13.2z" />
+      </svg>
+      <small>Iniciar sesion</small>
+    </button>
+  </p>
+</form>
+
+<small class='website'>Copyrigth Sebastian Ospina, Bryan Castro, para <a href='https://www.unibague.edu.co/' target='_blank'>Universidad de Ibague</a> </small>
+
+{% else %}
+<center><h1 style="margin-top:10%">Bienvenido Prof.{{nombre}}<h1><br></center>
+
+
+
+
+<style>
+  a:link {
+    text-decoration: none;
+  }
+
+  a:visited {
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  a:active {
+    text-decoration: none;
+  }
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+</style>
+
+
+<p>Da clic al boton copiar texto para copiar el codigo automaticamente</p>
+
+<input type="text" value="{{codigo}}" id="myInput">
+
+<div class="tooltip">
+<button onclick="myFunction()" onmouseout="outFunc()" style="color:white;font-size:20px">
+  <span class="tooltiptext" id="myTooltip">Copiar en el portapapeles</span>
+  Copiar texto
+  </button>
+</div>
+
+
+<script>
+function myFunction() {
+  var copyText = document.getElementById("myInput");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+
+  var tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Se ha guardado: " + copyText.value;
+}
+
+function outFunc() {
+  var tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Clic para copiar el texto";
+}
+</script>
+
+<h3><a href="/salones" style ="text-decoration:none;color:white">Clic para volver a la reserva de salones</a></h3>
+
+
+{% endif %}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<style>
+		body{
+			background-image: url(https://wallpapercave.com/uwp/uwp5620.jpeg);
+      margin: 0;
+
+      background-size: cover;
+      background-position:bottom;
+      padding: 15px;
+         background-attachment:fixed;
+         -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+
+		}
+	</style>
+	<title>Consulta obtenida</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body>
+	<center><h1 style="font-family: impact;color:white;margin-top: 20px;margin-bottom:120px;font-size: 65px; -webkit-text-stroke: 2px black;">Salones que cumplen con el criterio solicitado</h1></center>
+	<table class="table table-hover table-dark" background="white">
+        <thead>
+          <tr>
+            <th scope="row">Salon</td>
+            <th scope="row">Capacidad</td>
+            <th scope="row">Video Beam</td>
+            <th scope="row">Tablero Inteligente</td>
+            <th scope="row">Acciones</td>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in datos %}
+          <tr>
+            <th scope="row">{{i.1}}</td>
+            <td>{{i.8}}</td>
+            <td>{{i.9}}</td>
+            <td>{{i.10}}</td>
+            <td><a href="/validar/{{i.0}}" class="btn btn-secondary">Reservar</a></td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Reserva de auditorios</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- LINEARICONS -->
+		<link rel="stylesheet" href="/static/auditorio/fonts/linearicons/style.css">
+
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="/static/auditorio/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+
+		<!-- DATE-PICKER -->
+		<link rel="stylesheet" href="/static/auditorio/vendor/date-picker/css/datepicker.min.css">
+		
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="/static/auditorio/css/style.css">
+	</head>
+
+
+	<body>
+
+
+		<div class="wrapper">
+
+
+
+			<div class="inner">
+				<form action="/auditorio" method="POST">
+					<h3>Reservar un auditorio</h3>
+					<div class="form-row">
+						<div class="form-wrapper">
+							<label for="">Nombre completo*</label>
+							<input name ="nombre" type="text" class="form-control" placeholder="Harold Fabian Murcia" required="true">
+						</div>
+						<div class="form-wrapper">
+							<label for="">Correo electronico *</label>
+							<input type="text" name ="correo" class="form-control" placeholder="harold@unibague.edu.co" required="true">
+						</div>
+					</div>
+
+					<div class="form-row">
+						<div class="form-wrapper">
+							<label for="">Fecha de reserva*</label>
+							
+							<input type="date" class ="form-control" name ="fecha">
+						</div>
+						<div class="form-wrapper">
+							<label for="">Rango horario*</label>
+							<input type="text" class="form-control" placeholder="13:00-16:30" required="true" name="hora">
+						</div>
+					</div>
+						
+					<div class="form-row last">
+						<div class="form-wrapper">
+							<label for="">Numero de asistentes</label>
+							<select name="asistentes" id="" class="form-control">
+								<option value="10">10 o mas</option>
+								
+								<option value="30">30 o mas</option>
+								
+								<option value="50">50 o mas</option>
+								<option value="100">100 o mas</option>
+							</select>
+							<i class="zmdi zmdi-chevron-down"></i>
+						</div>
+					
+
+					</div>
+
+						<div class="form-wrapper">
+							<label for="">Razón de reserva*</label>
+							<input type="text" class="form-control" placeholder="Indique la razón por la cual desea reservar el auditorio" required="true" name="razon">
+							<span></span>
+						</div>
+					
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> Entiendo que el horario deseado puede estar sujeto a cambios que dependen de la administración
+							<span class="checkmark"></span>
+						</label>
+					</div>
+					<button data-text="Enviar" type="submit">
+						<span>Enviar Solicitud</span>
+					</button>
+				</form>
+			</div>
+		</div>
+		
+		<script src="/static/auditorio/js/jquery-3.3.1.min.js"></script>
+
+		<!-- DATE-PICKER -->
+		<script src="/static/auditorio/vendor/date-picker/js/datepicker.js"></script>
+		<script src="/static/auditorio/vendor/date-picker/js/datepicker.en.js"></script>
+
+		<script src="/static/auditorio/js/main.js"></script>
+	</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
